@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FooBo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav id="navbar">
+        <div class="navbar-left">FooBo</div>
+        <ul class="navbar-right">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section3">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section 1 (Home) -->
+    <section id="section1" class="section">
+        <img src="a.png" alt="home">
+        
+        <div class="button-container">
+            <button class="chat-button" id="chat-btn">FooBo-chat</button>
+            <button class="django-button" onclick="location.href='http://127.0.0.1:8000/'">FooBo-Nutri</button>
+        </div>
+    </section>
+
+    <section id="section3" class="section">
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="services-header">
+                <h5>OUR SERVICES</h5>
+                <h2>Your Ultimate Culinary Companion!</h2>
+                <p>Our website offers a seamless blend of interactive recipe generation and detailed nutritional insights to enhance your cooking experience and support your health goals.</p>
+            </div>
+            <div class="services-cards">
+                <div class="card">
+                    <img src="1.jpg" alt="Personalized meal plans">
+                    <div class="card-text">
+                        <h3>Nutritional charts</h3>
+                        <p>Typically displays the macronutrient composition of a food item, which includes carbohydrates, proteins, and fats. This breakdown helps you understand the primary energy sources in your diet. </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="2.jpg" alt="Nutrition counseling">
+                    <div class="card-text">
+                        <h3>Recipe Generation</h3>
+                        <p>The chatbot generates recipes of your choice</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="3.jpg" alt="Sports nutrition">
+                    <div class="card-text">
+                        <h3>Cooking assistance</h3>
+                        <p> The chatbot can tailor recommendations based on dietary needs such as vegetarian, gluten-free, or low-carb diets. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container" class="chatbot-container">
+        <button id="close-chatbot" class="close-button">&times;</button>
+        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/b94ccc7f-b9e1-4462-b3d1-ab95ff457c6c"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 FooBo. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#section1">Home</a> |
+                <a href="#section3">About</a> |
+                <a href="mailto:info@foobo.com">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatButton = document.getElementById('chat-btn');
+            const chatbotContainer = document.getElementById('chatbot-container');
+            const closeChatbotButton = document.getElementById('close-chatbot');
+            const chatbotIframe = document.querySelector('#chatbot-container iframe');
+
+            // Event listener for the chat button
+            chatButton.addEventListener('click', () => {
+                chatbotContainer.style.display = 'block';
+            });
+
+            // Event listener for closing the chatbot
+            closeChatbotButton.addEventListener('click', () => {
+                chatbotContainer.style.display = 'none';
+                // Clear chatbot messages (if needed)
+                chatbotIframe.contentWindow.postMessage({ type: 'clear' }, '*');
+            });
+
+            // Smooth scrolling for Navbar links
+            document.querySelectorAll('#navbar a').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

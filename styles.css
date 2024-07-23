@@ -1,0 +1,359 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Section Styles */
+.section {
+    padding: 0;
+    text-align: center;
+   
+    position: relative;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100vh;
+}
+
+.section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Section 3 */
+/* Section 3 */
+/* Section 3 */
+#section3 {
+    /* Use the uploaded image */
+    background-image: url('./se3.png');
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-color: transparent; /* Ensure the background color is transparent */
+    height: 100vh; /* Full viewport height, adjust as needed */
+    padding: 20px; /* Optional: Add padding if needed */
+    color: rgb(1, 1, 1); /* Optional: Adjust text color for readability */
+}
+
+
+
+.button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px; /* Space between buttons */
+}
+
+.login-button, .chat-button, .django-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #f8fbff;
+    color: rgb(15, 77, 46);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-button:hover, .chat-button:hover, .django-button:hover {
+    background-color: #87b99e;
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover, .close-button:focus {
+    color: black;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.modal-content button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.welcome-message {
+    display: none;
+    background-color: #b9719e;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    text-align: center;
+}
+
+.welcome-message p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+.welcome-message button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #d98ad8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.welcome-message button:hover {
+    background-color: #c883c3;
+    transform: scale(1.1);
+}
+
+/* Chatbot Container */
+.chatbot-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 430px;
+    background-color: rgb(244, 244, 244);
+    box-shadow: 0px 0px 10px 0px #000;
+    border-radius: 10px;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Navigation Bar */
+/* Navigation Bar */
+#navbar {
+    position: fixed; /* Fixed positioning */
+    top: 0;
+    width: 100%;
+    font-size: 30px;
+    background-color: transparent; /* Transparent background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    z-index: 1000;
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove any box shadow */
+}
+
+
+
+
+
+
+.navbar-left {
+    margin-left: 20px;
+    font-size: 100%;
+    color: rgb(0, 0, 0); /* Adjust text color for visibility */
+}
+
+.navbar-right {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+.navbar-right li {
+    margin: 0 10px;
+}
+
+.navbar-right a {
+    color: rgb(0, 0, 0); /* Normal text color */
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.3s;
+}
+
+.navbar-right a:hover {
+    color: #82ba8f; /* Hover text color */
+}
+
+/* Services Section */
+.services-section {
+    padding: 50px;
+  
+    text-align: center;
+}
+
+.services-header h5 {
+    font-size: 1.2em;
+    color: #777;
+}
+
+.services-header h2 {
+    font-size: 2.5em;
+    margin: 20px 0;
+}
+
+.services-header p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+.services-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    height: 400px; /* Adjust height if necessary */
+    position: relative; /* Make it easier to position the text */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the card without stretching */
+    transition: opacity 0.3s;
+}
+
+.card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    opacity: 0; /* Initially hidden */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card:hover .card-text {
+    opacity: 1; /* Show text on hover */
+}
+/* Styles for the footer */
+#footer {
+    background-color: black; /* Background color */
+    color: #fff;            /* Text color */
+    padding: 20px;          /* Padding around the footer */
+    text-align: center;     /* Center-align text */
+    position: relative;     /* Ensure footer stays at the bottom */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
